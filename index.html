@@ -3,8 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#f1ede4">
-  <meta name="description" content="Будем знакомы - взрослый клуб живого общения. Тематические встречи, программы и настоящие люди без аватарок.">
+  <meta name="theme-color" content="#f4f0e7">
+  <meta name="description" content="Будем знакомы - взрослый клуб живого общения. Тематический нетворкинг, двухчасовая программа и настоящие люди без аватарок.">
+  <meta property="og:title" content="Будем знакомы - взрослый клуб живого общения">
+  <meta property="og:description" content="Тематические встречи, живые люди, настоящие эмоции. Выберите событие и напишите организатору в Telegram или MAX.">
+  <meta property="og:type" content="website">
   <title>Будем знакомы - взрослый клуб живого общения</title>
   <link rel="preload" href="/assets/logo.webp" as="image">
   <link rel="stylesheet" href="/styles.css">
@@ -12,70 +15,138 @@
 <body>
   <header class="topbar">
     <a class="brand" href="#top" aria-label="Будем знакомы">
-      <img src="/assets/logo.webp" alt="Будем знакомы">
+      <img src="/assets/logo.webp" alt="Официальный логотип Будем знакомы">
       <span>взрослый клуб<br>живого общения</span>
     </a>
-    <nav>
-      <a href="#events">Встречи</a><a href="#about">Что это</a><a href="#gallery">Галерея</a><a href="#archive">Архив</a>
+    <nav aria-label="Навигация">
+      <a href="#events">Встречи</a>
+      <a href="#about">Что это</a>
+      <a href="#gallery">Галерея</a>
+      <a href="#archive">Архив</a>
+      <a href="#join">Участие</a>
     </nav>
+    <button class="nav-cta" data-generic-join>Принять участие</button>
   </header>
 
   <main id="top">
     <section class="hero wrap">
       <div class="hero-copy">
-        <div class="kicker">Будем знакомы / Сергиев Посад</div>
-        <h1>ЖИВЫЕ<br><em>ЛЮДИ</em></h1>
+        <div class="kicker">Сергиев Посад / взрослый клуб живого общения</div>
+        <h1>ЖИВЫЕ<br><em>ЛЮДИ.</em></h1>
         <p class="lead">Тематический нетворкинг и двухчасовая развлекательная программа. Без анкет, без аватарок и без обязательного «давайте знакомиться».</p>
-        <div class="tags"><span>приходят по одному</span><span>приходят парами</span><span>приходят компаниями</span></div>
-        <button class="primary" data-generic-join>Хочу на следующую встречу</button>
+        <div class="hero-line"><span>ТЕМА</span><i></i><span>ПРОГРАММА</span><i></i><span>ОБЩЕНИЕ</span></div>
+        <div class="tags">
+          <span>можно одному</span>
+          <span>можно парой</span>
+          <span>можно компанией</span>
+        </div>
+        <div class="hero-actions">
+          <a class="primary" href="#events">Выбрать встречу</a>
+          <button class="ghost" data-generic-join>Написать организатору</button>
+        </div>
       </div>
-      <div class="hero-card">
-        <img src="/assets/logo.webp" alt="">
-        <div><b>НЕ ФОН ДЛЯ СОБЫТИЯ.<br>САМО СОБЫТИЕ.</b><p>Мы придумываем тему, механику и повод заговорить. Дальше всё происходит между людьми.</p></div>
+
+      <div class="hero-brand-card" aria-label="Будем знакомы">
+        <div class="logo-stage">
+          <img src="/assets/logo.webp" alt="Будем знакомы">
+        </div>
+        <div class="brand-statement">
+          <small>ВЗРОСЛЫЙ КЛУБ ЖИВОГО ОБЩЕНИЯ</small>
+          <strong>ЛЮДИ БЕЗ<br>АВАТАРОК.</strong>
+          <p>Мы создаём тему, игру и повод заговорить. Всё остальное происходит между людьми.</p>
+        </div>
       </div>
     </section>
 
+    <section class="manifesto wrap" aria-label="Суть клуба">
+      <div class="manifesto-index">01</div>
+      <p><b>Не дейтинг.</b> Не speed dating. Не обязательное знакомство. Это вечер, в котором программа помогает людям естественно оказаться в одном разговоре.</p>
+    </section>
+
     <section class="section wrap" id="events">
-      <div class="section-head"><div><span class="kicker">Ближайшие события</span><h2>ВЫБЕРИ<br>СВОЙ ВЕЧЕР</h2></div><p>Никаких анкет на сайте. Нажимаешь «Принять участие» - открывается Telegram с уже готовым сообщением организатору.</p></div>
+      <div class="section-head">
+        <div><span class="kicker">Ближайшие события</span><h2>ВЫБЕРИ<br>СВОЙ ВЕЧЕР</h2></div>
+        <p>Никаких форм на сайте. Выбираешь мероприятие, нажимаешь «Принять участие» и отправляешь готовое сообщение организатору в удобном мессенджере.</p>
+      </div>
       <div id="eventsGrid" class="event-grid"></div>
     </section>
 
     <section class="section wrap" id="about">
       <div class="about">
-        <div><span class="kicker gold">Взрослый клуб живого общения</span><h2>ЧТО ТАКОЕ<br>БЗ?</h2></div>
+        <div class="about-title">
+          <span class="kicker gold">Будем знакомы</span>
+          <h2>ЧТО<br>ЭТО?</h2>
+          <img src="/assets/logo.webp" alt="Будем знакомы">
+        </div>
         <div class="about-right">
-          <p class="about-lead">Это тематический нетворкинг, где двухчасовая программа снимает неловкость первых минут. Люди могут прийти совершенно незнакомыми - и не обязаны изображать общительность.</p>
+          <p class="about-lead">Два часа тематической программы, которая снимает неловкость первых минут. Люди приходят по одному, парами и компаниями - и никто не обязан изображать общительность.</p>
           <div class="feature-grid">
-            <article><b>Живые люди</b><span>Не профиль и не переписка - человек прямо перед тобой.</span></article>
-            <article><b>Без принуждения</b><span>Не надо знакомиться «по команде». Тема вечера сама даёт повод включиться.</span></article>
-            <article><b>Можно одному</b><span>Не нужно собирать компанию заранее. Формат для этого и существует.</span></article>
-            <article><b>Можно вместе</b><span>Пары и компании становятся частью общего вечера.</span></article>
+            <article><span class="num">01</span><b>Живые люди</b><p>Не профиль и не переписка - человек прямо перед тобой.</p></article>
+            <article><span class="num">02</span><b>Есть повод заговорить</b><p>Тема вечера и механики сами создают первые точки контакта.</p></article>
+            <article><span class="num">03</span><b>Можно прийти одному</b><p>Не нужно заранее собирать компанию. Формат для этого и существует.</p></article>
+            <article><span class="num">04</span><b>Можно прийти вместе</b><p>Пары и компании становятся частью общего вечера, а не отдельным столиком.</p></article>
           </div>
         </div>
       </div>
     </section>
 
     <section class="section wrap" id="gallery">
-      <div class="section-head"><div><span class="kicker">Не постановка</span><h2>КАК ЭТО<br>ВЫГЛЯДИТ</h2></div><p>Живые кадры с наших встреч. Столы, ведущий, игры, разговоры и обычные люди, которые ещё недавно друг друга не знали.</p></div>
-      <div class="gallery"><figure class="g1"><img src="/assets/gallery1.webp" alt="Встреча клуба Будем знакомы"></figure><figure><img src="/assets/gallery2.webp" alt="Гости клуба Будем знакомы"></figure><figure><img src="/assets/poster_ussr.webp" alt="Афиша Побег в СССР"></figure></div>
+      <div class="section-head">
+        <div><span class="kicker">Не постановка</span><h2>КАК ЭТО<br>ВЫГЛЯДИТ</h2></div>
+        <p>Живые кадры с наших встреч. Здесь мы специально не режем фотографии под одинаковые карточки - каждый кадр показывается целиком.</p>
+      </div>
+      <div class="gallery">
+        <figure><img src="/assets/gallery1.webp" alt="Встреча клуба Будем знакомы" loading="lazy"></figure>
+        <figure><img src="/assets/gallery2.webp" alt="Гости клуба Будем знакомы" loading="lazy"></figure>
+        <figure><img src="/assets/poster_ussr.webp" alt="Афиша Побег в СССР" loading="lazy"></figure>
+      </div>
     </section>
 
     <section class="section wrap" id="archive">
-      <div class="section-head"><div><span class="kicker">История клуба</span><h2>УЖЕ<br>ПРОВОДИЛИ</h2></div><p>Каждая встреча - отдельная тема. Архив будет расти вместе с клубом.</p></div>
+      <div class="section-head">
+        <div><span class="kicker">История клуба</span><h2>УЖЕ<br>ПРОВОДИЛИ</h2></div>
+        <p>Каждая встреча - отдельная тема и отдельная визуальная история. Афиши показываем в оригинальных пропорциях, без обрезки.</p>
+      </div>
       <div id="archiveGrid" class="archive-grid"></div>
     </section>
 
-    <section class="section wrap privacy-note">
-      <div><span class="kicker">Просто и аккуратно</span><h2>БЕЗ АНКЕТ<br>НА САЙТЕ</h2></div>
-      <p>Мы не просим здесь имя, телефон или почту. Кнопка участия только открывает Telegram с текстом выбранного мероприятия - дальше вы сами решаете, отправлять сообщение или нет.</p>
+    <section class="section wrap join-section" id="join">
+      <div class="join-copy">
+        <span class="kicker">Как попасть</span>
+        <h2>ТРИ<br>КЛИКА.</h2>
+        <p>Выбери встречу, выбери мессенджер и отправь готовое сообщение. На сайте ничего заполнять не нужно.</p>
+      </div>
+      <div class="steps">
+        <article><span>01</span><b>Выбираешь событие</b><p>Смотришь афишу, дату, формат и стоимость.</p></article>
+        <article><span>02</span><b>Нажимаешь «Принять участие»</b><p>Мы заранее формируем короткий текст по конкретной встрече.</p></article>
+        <article><span>03</span><b>Пишешь организатору</b><p>Telegram работает сразу. MAX подключается тем же способом по прямой ссылке.</p></article>
+      </div>
+      <button class="primary large" data-generic-join>Хочу на встречу</button>
     </section>
   </main>
 
-  <footer class="footer wrap"><img src="/assets/logo.webp" alt="Будем знакомы"><div><b>Будем знакомы</b><span>взрослый клуб живого общения</span></div><button class="text-button" data-generic-join>Написать организатору →</button></footer>
+  <footer class="footer wrap">
+    <div class="footer-brand"><img src="/assets/logo.webp" alt="Будем знакомы"><div><b>Будем знакомы</b><span>взрослый клуб живого общения</span></div></div>
+    <div class="footer-note">Без анкет и оплаты на сайте. Контакт с организатором происходит только после вашего перехода в мессенджер.</div>
+    <button class="text-button" data-generic-join>Написать организатору →</button>
+  </footer>
 
   <div class="modal" id="joinModal" aria-hidden="true">
-    <div class="modal-card"><button class="modal-close" id="modalClose" aria-label="Закрыть">×</button><span class="kicker">Принять участие</span><h3 id="modalTitle">Будем знакомы</h3><p>На сайте ничего заполнять не нужно. Ниже уже подготовлен текст для Telegram.</p><div class="message-preview" id="messagePreview"></div><a class="primary telegram" id="telegramButton" href="#" target="_blank" rel="noopener">Открыть Telegram</a><button class="secondary" id="copyButton">Скопировать текст</button><small id="copyStatus"></small></div>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" aria-label="Закрыть">×</button>
+      <span class="kicker">Принять участие</span>
+      <h3 id="modalTitle">Будем знакомы</h3>
+      <p>Никаких анкет. Выбери мессенджер - там уже будет подготовлен текст по выбранной встрече.</p>
+      <div class="message-preview" id="messagePreview"></div>
+      <div class="messenger-grid">
+        <a class="messenger-button telegram" id="telegramButton" href="#" target="_blank" rel="noopener"><span>TG</span><b>Telegram</b><small>открыть диалог</small></a>
+        <a class="messenger-button max" id="maxButton" href="#" target="_blank" rel="noopener" hidden><span>MAX</span><b>MAX</b><small>скопируем текст и откроем</small></a>
+      </div>
+      <button class="secondary" id="copyButton">Скопировать текст</button>
+      <small id="copyStatus"></small>
+    </div>
   </div>
+
   <script src="/app.js"></script>
 </body>
 </html>

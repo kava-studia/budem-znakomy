@@ -1,13 +1,9 @@
 const TELEGRAM_USERNAME = 'kava_studia';
 
-// Вставим сюда прямую ссылку на твой профиль/чат в MAX, как только ты её пришлёшь.
-// Пример: 'https://max.ru/....'
-const MAX_CONTACT_URL = '';
+const MAX_CONTACT_URL = 'https://max.ru/u/f9LHodD0cOID_dgF3S6fVV47t3D0pcOwjMiQ0IDe96OTvyfjs7u0MjRICI0';
 
-// Добавляем сюда только подтверждённые будущие мероприятия.
 const upcomingEvents = [];
 
-// Архив - только реальные уже прошедшие встречи.
 const archiveEvents = [
   { title: 'Рисуем Блюз', date: '06.08.2026', time: '20:20', poster: '/assets/poster_art.webp' },
   { title: 'Побег в СССР!', date: '20.08.2026', time: '20:20', poster: '/assets/poster_ussr.webp' }
@@ -83,15 +79,9 @@ function openJoin(event=null) {
   $('#copyStatus').textContent = '';
 
   const maxButton = $('#maxButton');
-  if (MAX_CONTACT_URL) {
-    maxButton.hidden = false;
-    maxButton.href = MAX_CONTACT_URL;
-    maxButton.onclick = async () => { await copyMessage(msg); };
-  } else {
-    maxButton.hidden = true;
-    maxButton.removeAttribute('href');
-    maxButton.onclick = null;
-  }
+  maxButton.hidden = false;
+  maxButton.href = MAX_CONTACT_URL;
+  maxButton.onclick = async () => { await copyMessage(msg); };
 
   $('#joinModal').classList.add('open');
   $('#joinModal').setAttribute('aria-hidden','false');

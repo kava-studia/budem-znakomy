@@ -1,7 +1,18 @@
 const TELEGRAM_USERNAME = 'kava_studia';
 const MAX_CONTACT_URL = 'https://max.ru/u/f9LHodD0cOID_dgF3S6fVV47t3D0pcOwjMiQ0IDe96OTvyfjs7u0MjRICI0';
 
-const upcomingEvents = [];
+const upcomingEvents = [
+  {
+    title: 'Black & Red',
+    date: '27.08.2026',
+    time: '20:20',
+    poster: '/assets/poster_black_red.webp',
+    description: 'Элегантный тематический вечер в чёрно-красном настроении. Живое общение, программа клуба и атмосфера, в которой повод заговорить уже создан.',
+    venue: 'Гастробар на Ясной',
+    address: 'ул. Ясная, 6А',
+    price: '600 ₽ с картой клуба БЗ · 1000 ₽ без карты'
+  }
+];
 
 const archiveEvents = [
   {
@@ -74,13 +85,15 @@ bindImageLightbox();
   }
 
   grid.innerHTML = upcomingEvents.map((event, index) => `
-    <article class="event-card">
+    <article class="event-card event-card-featured">
       <figure class="event-poster"><img src="${esc(event.poster)}" alt="Афиша ${esc(event.title)}"></figure>
       <div class="event-body">
+        <span class="event-kicker">Ближайшая встреча</span>
         <div class="event-date">${esc(event.date)} · ${esc(event.time)}</div>
         <h3>${esc(event.title)}</h3>
         <p>${esc(event.description || '')}</p>
         <div class="event-meta">${event.venue ? `<strong>${esc(event.venue)}</strong>` : ''}${event.address ? `<span>${esc(event.address)}</span>` : ''}</div>
+        ${event.price ? `<div class="event-price">${esc(event.price)}</div>` : ''}
         <button class="button button-primary" data-event-index="${index}">Принять участие</button>
       </div>
     </article>`).join('');
@@ -183,6 +196,12 @@ function bindGeneric() {
   });
 }
 
+function bindNextEvent() {
+  document.querySelectorAll('[data-next-event-join]').forEach((element) => {
+    element.onclick = () => openJoin(upcomingEvents[0] || null);
+  });
+}
+
 function bindDirectMessengerLinks() {
   const message = eventMessage();
   document.querySelectorAll('[data-direct-telegram]').forEach((link) => {
@@ -227,4 +246,5 @@ $('#copyButton')?.addEventListener('click', async () => {
 renderEvents();
 renderArchive();
 bindGeneric();
+bindNextEvent();
 bindDirectMessengerLinks();

@@ -8,21 +8,21 @@ const archiveEvents = [
     title: 'Рисуем Блюз',
     date: '06.08.2026',
     time: '20:20',
-    poster: '/assets/poster_art.webp',
+    poster: '/assets/poster_art.jpg',
     label: 'арт-вечер'
   },
   {
     title: 'Роковый вечер',
     date: '13.08.2026',
     time: '20:20',
-    poster: '/assets/poster_rock.webp',
+    poster: '/assets/poster_rock.jpg',
     label: 'музыкальный вечер'
   },
   {
     title: 'Побег в СССР!',
     date: '20.08.2026',
     time: '20:20',
-    poster: '/assets/poster_ussr.webp',
+    poster: '/assets/poster_ussr.png',
     label: 'квартирник для взрослых'
   }
 ];
@@ -69,6 +69,7 @@ function renderEvents() {
         </div>
       </article>`;
     bindDirectMessengerLinks();
+bindImageLightbox();
     return;
   }
 
@@ -99,6 +100,7 @@ function renderArchive() {
         <img src="${esc(event.poster)}" alt="Афиша ${esc(event.title)}" loading="lazy">
       </figure>
       <div class="archive-info">
+        <img class="card-mark" src="/assets/logo.png" alt="" aria-hidden="true">
         <div class="archive-meta"><span>${esc(event.date)}</span><span>${esc(event.time)}</span></div>
         <h3>${esc(event.title)}</h3>
         <p>${esc(event.label || '')}</p>
@@ -139,6 +141,34 @@ function openJoin(event = null) {
   document.body.classList.add('modal-open');
 }
 
+function openImageLightbox(image) {
+  const lightbox = $('#imageLightbox');
+  const lightboxImage = $('#imageLightboxImage');
+  const caption = $('#imageLightboxCaption');
+  if (!lightbox || !lightboxImage) return;
+  lightboxImage.src = image.currentSrc || image.src;
+  lightboxImage.alt = image.alt || '';
+  if (caption) caption.textContent = image.alt || '';
+  lightbox.classList.add('open');
+  lightbox.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('modal-open');
+}
+
+function closeImageLightbox() {
+  const lightbox = $('#imageLightbox');
+  if (!lightbox) return;
+  lightbox.classList.remove('open');
+  lightbox.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('modal-open');
+}
+
+function bindImageLightbox() {
+  document.querySelectorAll('.gallery-item img, .poster-wrap img, .event-poster img').forEach((image) => {
+    image.closest('figure')?.classList.add('is-zoomable');
+    image.closest('figure')?.setAttribute('tabindex', '0');
+  });
+}
+
 function closeJoin() {
   const modal = $('#joinModal');
   if (!modal) return;
@@ -165,11 +195,30 @@ function bindDirectMessengerLinks() {
 }
 
 $('#modalClose')?.addEventListener('click', closeJoin);
+$('#imageLightboxClose')?.addEventListener('click', closeImageLightbox);
+$('#imageLightbox')?.addEventListener('click', (event) => {
+  if (event.target.id === 'imageLightbox') closeImageLightbox();
+});
+document.addEventListener('click', (event) => {
+  const image = event.target.closest?.('.gallery-item img, .poster-wrap img, .event-poster img');
+  if (image) openImageLightbox(image);
+});
+document.addEventListener('keydown', (event) => {
+  const figure = event.target.closest?.('figure.is-zoomable');
+  if (figure && (event.key === 'Enter' || event.key === ' ')) {
+    event.preventDefault();
+    const image = figure.querySelector('img');
+    if (image) openImageLightbox(image);
+  }
+});
 $('#joinModal')?.addEventListener('click', (event) => {
   if (event.target.id === 'joinModal') closeJoin();
 });
 document.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape') closeJoin();
+  if (event.key === 'Escape') {
+    closeJoin();
+    closeImageLightbox();
+  }
 });
 $('#copyButton')?.addEventListener('click', async () => {
   await copyMessage($('#messagePreview').textContent);

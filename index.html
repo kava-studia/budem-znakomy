@@ -8,14 +8,17 @@
   <meta property="og:title" content="Будем знакомы — взрослый клуб живого общения">
   <meta property="og:description" content="Тематические вечера. Живые люди. Настоящие эмоции.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://budem-znakomy.vercel.app">
+  <meta property="og:image" content="https://budem-znakomy.vercel.app/assets/poster_ussr.png">
+  <meta name="twitter:card" content="summary_large_image">
   <title>Будем знакомы — взрослый клуб живого общения</title>
-  <link rel="preload" href="/assets/logo.webp" as="image">
+  <link rel="preload" href="/assets/logo.png" as="image">
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
   <header class="topbar">
     <a class="brand" href="#top" aria-label="Будем знакомы — на главную">
-      <img src="/assets/logo.webp" alt="Официальный логотип Будем знакомы">
+      <img src="/assets/logo.png" alt="Официальный логотип Будем знакомы">
       <span>Будем знакомы</span>
     </a>
     <nav aria-label="Навигация">
@@ -47,7 +50,7 @@
 
       <aside class="hero-identity">
         <div class="identity-glow"></div>
-        <img class="identity-logo" src="/assets/logo.webp" alt="Официальный логотип клуба Будем знакомы">
+        <img class="identity-logo" src="/assets/logo.png" alt="Официальный логотип клуба Будем знакомы">
         <div class="identity-bottom">
           <span>Клуб живого общения</span>
           <strong>ЛЮДИ<br>БЕЗ АВАТАРОК.</strong>
@@ -96,9 +99,9 @@
         <p>Настоящие кадры с наших встреч. Фотографии показываем целиком — без кропа ради одинаковых карточек.</p>
       </header>
       <div class="gallery">
-        <figure class="gallery-item gallery-tall"><img src="/assets/gallery1.webp" alt="Гости клуба Будем знакомы" loading="lazy"></figure>
-        <figure class="gallery-item"><img src="/assets/gallery2.webp" alt="Живое общение на встрече Будем знакомы" loading="lazy"></figure>
-        <figure class="gallery-item"><img src="/assets/poster_ussr.webp" alt="Афиша Побег в СССР" loading="lazy"></figure>
+        <figure class="gallery-item gallery-tall"><img src="/assets/gallery_art.jpg" alt="Гости клуба Будем знакомы" loading="lazy"></figure>
+        <figure class="gallery-item"><img src="/assets/gallery_ussr.png" alt="Живое общение на встрече Будем знакомы" loading="lazy"></figure>
+        <figure class="gallery-item"><img src="/assets/poster_ussr.png" alt="Афиша Побег в СССР" loading="lazy"></figure>
       </div>
     </section>
 
@@ -130,7 +133,7 @@
 
   <footer class="footer wrap">
     <a class="footer-brand" href="#top">
-      <img src="/assets/logo.webp" alt="Будем знакомы">
+      <img src="/assets/logo.png" alt="Будем знакомы">
       <div><strong>Будем знакомы</strong><span>взрослый клуб живого общения</span></div>
     </a>
     <p>Сергиев Посад · тематические вечера · живое общение</p>
@@ -151,6 +154,12 @@
       <button class="copy-button" id="copyButton">Скопировать сообщение</button>
       <small id="copyStatus"></small>
     </div>
+  </div>
+
+  <div class="image-lightbox" id="imageLightbox" aria-hidden="true">
+    <button class="image-lightbox-close" id="imageLightboxClose" aria-label="Закрыть изображение">×</button>
+    <img id="imageLightboxImage" src="" alt="">
+    <p id="imageLightboxCaption"></p>
   </div>
 
   <script src="/app.js"></script>

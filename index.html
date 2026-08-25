@@ -3,169 +3,199 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#0b100d">
-  <meta name="description" content="Black &amp; Red — тематический вечер клуба Будем знакомы. 27 августа в 20:20, Гастробар на Ясной, Сергиев Посад.">
-  <meta property="og:title" content="Будем знакомы — взрослый клуб живого общения">
-  <meta property="og:description" content="Black &amp; Red · 27 августа · 20:20 · Гастробар на Ясной">
+  <meta name="theme-color" content="#0a0d0a">
+  <meta name="description" content="Будем знакомы - взрослый клуб живого общения в Сергиевом Посаде. Тематические вечера, настоящие люди и новые разговоры без анкет и свайпов.">
+  <meta property="og:title" content="Будем знакомы - взрослый клуб живого общения">
+  <meta property="og:description" content="Живые люди. Тематические вечера. Повод заговорить уже придуман.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://budem-znakomy.vercel.app">
   <meta property="og:image" content="https://budem-znakomy.vercel.app/assets/poster_black_red.webp">
   <meta name="twitter:card" content="summary_large_image">
-  <title>Будем знакомы — взрослый клуб живого общения</title>
+  <title>Будем знакомы - клуб живого общения</title>
   <link rel="preload" href="/assets/logo.png" as="image">
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <header class="topbar">
-    <a class="brand" href="#top" aria-label="Будем знакомы — на главную">
-      <img src="/assets/logo.png" alt="Официальный логотип Будем знакомы">
-      <span>Будем знакомы</span>
+  <header class="site-header shell">
+    <a class="brand" href="#top" aria-label="Будем знакомы - на главную">
+      <img src="/assets/logo.png" alt="Логотип Будем знакомы">
+      <span><strong>Будем знакомы</strong><small>Клуб живого общения</small></span>
     </a>
-    <nav aria-label="Навигация">
+    <nav class="desktop-nav" aria-label="Основная навигация">
       <a href="#events">События</a>
-      <a href="#about">О клубе</a>
+      <a href="#about">О нас</a>
+      <a href="#how">Как проходит</a>
       <a href="#gallery">Атмосфера</a>
       <a href="#archive">Архив</a>
     </nav>
-    <button class="button button-small" data-next-event-join>Принять участие</button>
+    <button class="header-cta" data-next-event-join>Принять участие <span aria-hidden="true">↗</span></button>
   </header>
 
-  <main id="top">
-    <section class="hero wrap">
-      <div class="hero-copy">
-        <span class="eyebrow">Сергиев Посад · взрослый клуб живого общения</span>
-        <h1>БУДЕМ<br><span>ЗНАКОМЫ</span></h1>
-        <p class="hero-lead">Тематические вечера.<br>Живые люди.<br>Настоящие эмоции.</p>
-        <p class="hero-note">Без анкет, свайпов и обязательного «давайте знакомиться». Мы создаём событие и повод заговорить — всё остальное происходит между людьми.</p>
-        <div class="hero-actions">
-          <a class="button button-telegram" data-direct-telegram target="_blank" rel="noopener">Написать в Telegram</a>
-          <a class="button button-max" data-direct-max target="_blank" rel="noopener">Написать в MAX</a>
+  <main class="page" id="top">
+    <section class="shell bento-grid hero-grid" aria-label="Будем знакомы">
+      <article class="bento-card hero-copy span-7 reveal">
+        <div class="hero-topline">
+          <span class="pill">Сергиев Посад · 18+</span>
+          <span class="live-dot">Живые встречи</span>
         </div>
-        <div class="hero-facts" aria-label="Формат клуба">
-          <span>можно одному</span>
-          <span>можно парой</span>
-          <span>можно компанией</span>
+        <div class="hero-center">
+          <p class="overline">Взрослый клуб живого общения</p>
+          <h1>Повод заговорить <em>уже придуман.</em></h1>
+          <p class="hero-lead">Мы собираем тематические вечера, где люди знакомятся естественно - через музыку, игру, атмосферу и общий сюжет.</p>
         </div>
-      </div>
+        <div class="button-row">
+          <a class="button button-primary" href="#events">Выбрать событие <span aria-hidden="true">↘</span></a>
+          <button class="button button-quiet" data-next-event-join>Записаться <span aria-hidden="true">↗</span></button>
+        </div>
+      </article>
 
-      <aside class="hero-identity">
-        <div class="identity-glow"></div>
-        <img class="identity-logo" src="/assets/logo.png" alt="Официальный логотип клуба Будем знакомы">
-        <div class="identity-bottom">
-          <span>Клуб живого общения</span>
-          <strong>ЛЮДИ<br>БЕЗ АВАТАРОК.</strong>
+      <article class="bento-card hero-event span-5 reveal">
+        <img src="/assets/poster_black_red.webp" alt="Афиша Black and Red 27 августа" data-lightbox>
+        <div class="hero-event-overlay">
+          <span>Ближайшая встреча</span>
+          <strong>27.08 · 20:20</strong>
+          <button data-event-id="black-red">Black &amp; Red <b aria-hidden="true">↗</b></button>
         </div>
-      </aside>
+      </article>
+
+      <article class="bento-card manifesto span-8 reveal">
+        <span class="kicker">Смысл клуба</span>
+        <h2>Не листать людей.<br>Встретить их.</h2>
+        <p>Без анкет, рейтингов, свайпов и неловкого требования «срочно знакомиться». Просто хороший вечер, в котором люди оказываются рядом не случайно.</p>
+      </article>
+
+      <article class="bento-card number-card span-4 reveal">
+        <span class="kicker">Формат</span>
+        <strong>18+</strong>
+        <p>Взрослые события без подростковой суеты и дейтинг-конвейера.</p>
+      </article>
     </section>
 
-    <section class="statement wrap" aria-label="Что такое Будем знакомы">
-      <span class="statement-index">01</span>
-      <p><strong>Это не сайт знакомств и не speed dating.</strong> Это взрослый клуб тематических встреч, где программа помогает людям естественно оказаться в одном разговоре.</p>
-    </section>
-
-    <section class="section wrap" id="events">
-      <header class="section-head">
-        <div>
-          <span class="eyebrow">Ближайшее</span>
-          <h2>СОБЫТИЯ</h2>
-        </div>
-        <p>Каждая встреча — отдельная тема, сценарий и атмосфера. Никаких форм на сайте: выбираешь событие и пишешь организатору напрямую.</p>
+    <section class="shell section-block" id="events">
+      <header class="section-heading reveal">
+        <div><span class="kicker light">Ближайшие даты</span><h2>Куда идём дальше</h2></div>
+        <p>У каждого вечера свой характер. Выбирай настроение - первое сообщение организатору уже подготовлено.</p>
       </header>
-      <div id="eventsGrid" class="event-grid"></div>
+      <div class="bento-grid events-grid" id="eventsGrid"></div>
     </section>
 
-    <section class="section wrap" id="about">
-      <div class="club-panel">
-        <div class="club-intro">
-          <span class="eyebrow gold">Будем знакомы</span>
-          <h2>НЕ НУЖНО<br>УМЕТЬ<br>ЗНАКОМИТЬСЯ.</h2>
-          <p>Достаточно прийти. Тема вечера, ведущие и игровые механики снимают неловкость первых минут.</p>
-        </div>
-        <div class="club-principles">
-          <article><span>01</span><h3>Живые люди</h3><p>Не профиль и не переписка. Человек прямо перед тобой.</p></article>
-          <article><span>02</span><h3>Есть повод заговорить</h3><p>Каждая программа создаёт естественные точки контакта.</p></article>
-          <article><span>03</span><h3>Без обязаловки</h3><p>Можно общаться, играть, наблюдать, приходить одному или вместе.</p></article>
-          <article><span>04</span><h3>Каждый вечер другой</h3><p>Музыка, искусство, ностальгия, игры и новые форматы.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section wrap" id="gallery">
-      <header class="section-head">
-        <div>
-          <span class="eyebrow">Не постановка</span>
-          <h2>АТМОСФЕРА</h2>
-        </div>
-        <p>Настоящие кадры с наших встреч. Фотографии показываем целиком — без кропа ради одинаковых карточек.</p>
+    <section class="shell section-block" id="about">
+      <header class="section-heading reveal">
+        <div><span class="kicker light">О нас</span><h2>Клуб, который начинается с людей</h2></div>
+        <p>«Будем знакомы» придумали Кава и Светлана Газданова - чтобы у взрослых людей снова было место для живых новых встреч.</p>
       </header>
-      <div class="gallery">
-        <figure class="gallery-item gallery-tall"><img src="/assets/gallery_art.jpg" alt="Гости клуба Будем знакомы" loading="lazy"></figure>
-        <figure class="gallery-item"><img src="/assets/gallery_ussr.png" alt="Живое общение на встрече Будем знакомы" loading="lazy"></figure>
-        <figure class="gallery-item"><img src="/assets/poster_ussr.png" alt="Афиша Побег в СССР" loading="lazy"></figure>
+
+      <div class="bento-grid about-grid">
+        <article class="bento-card about-main span-7 reveal">
+          <span class="kicker">Кава + Светлана</span>
+          <h3>Мы не продаём знакомство. Мы создаём вечер, после которого оно может случиться само.</h3>
+          <p>Каждое событие получает тему, сценарные точки и ведущих. Этого достаточно, чтобы снять первые пять минут неловкости - дальше люди делают всё сами.</p>
+          <div class="about-signature"><span>Будем</span><b>знакомы?</b></div>
+        </article>
+
+        <article class="bento-card about-dark span-5 reveal">
+          <span class="kicker">Сразу честно</span>
+          <h3>Это не speed dating.</h3>
+          <p>Не нужно переходить от столика к столику, проходить собеседование или выбирать человека по карточке.</p>
+          <strong>Ты просто приходишь на событие.</strong>
+        </article>
+
+        <article class="bento-card mini-card mini-lime span-4 reveal">
+          <span class="mini-icon" aria-hidden="true">01</span>
+          <h3>Можно одному</h3>
+          <p>Программа не оставляет тебя стоять у стены с бокалом и сложным лицом.</p>
+        </article>
+        <article class="bento-card mini-card mini-lilac span-4 reveal">
+          <span class="mini-icon" aria-hidden="true">02</span>
+          <h3>Можно вдвоём</h3>
+          <p>Приходи парой, с другом или подругой - клуб не требует статуса «в поиске».</p>
+        </article>
+        <article class="bento-card mini-card mini-gold span-4 reveal">
+          <span class="mini-icon" aria-hidden="true">03</span>
+          <h3>Можно компанией</h3>
+          <p>Хороший план на вечер, даже если вы и так давно знакомы друг с другом.</p>
+        </article>
       </div>
     </section>
 
-    <section class="section wrap" id="archive">
-      <header class="section-head">
-        <div>
-          <span class="eyebrow">История клуба</span>
-          <h2>УЖЕ БЫЛО</h2>
-        </div>
-        <p>Архив встреч — не шаблонная сетка. Каждая афиша остаётся в оригинальных пропорциях и сохраняет свой характер.</p>
+    <section class="shell section-block" id="how">
+      <header class="section-heading reveal">
+        <div><span class="kicker light">Как это работает</span><h2>Три простых шага</h2></div>
+        <p>Никаких анкет на двадцать вопросов и личных данных на сайте.</p>
       </header>
-      <div id="archiveGrid" class="archive-grid"></div>
+      <div class="bento-grid steps-grid">
+        <article class="bento-card step-card span-4 reveal"><span>01</span><div><h3>Выбираешь вечер</h3><p>Смотришь тему, дату и атмосферу ближайшего события.</p></div></article>
+        <article class="bento-card step-card span-4 reveal"><span>02</span><div><h3>Пишешь нам</h3><p>Кнопка открывает Telegram или MAX с готовым сообщением.</p></div></article>
+        <article class="bento-card step-card span-4 reveal"><span>03</span><div><h3>Приходишь</h3><p>Ведущие запускают вечер. Дальше начинается самое настоящее.</p></div></article>
+      </div>
     </section>
 
-    <section class="contact-section wrap" id="join">
-      <div class="contact-title">
-        <span class="eyebrow gold">Хочешь на следующую встречу?</span>
-        <h2>ПРОСТО<br>НАПИШИ.</h2>
+    <section class="shell section-block" id="gallery">
+      <header class="section-heading reveal">
+        <div><span class="kicker light">Атмосфера</span><h2>Люди без аватарок</h2></div>
+        <p>Не постановка и не фотобанк. Реальные гости, разговоры и события клуба.</p>
+      </header>
+      <div class="bento-grid gallery-grid">
+        <figure class="bento-card gallery-large span-7 reveal"><img src="/assets/gallery_ussr.png" alt="Гости на встрече Побег в СССР" loading="lazy" data-lightbox><figcaption><span>Побег в СССР</span><b>20.08.2026</b></figcaption></figure>
+        <figure class="bento-card gallery-side span-5 reveal"><img src="/assets/gallery_art.jpg" alt="Гости рисуют на арт-вечере Будем знакомы" loading="lazy" data-lightbox><figcaption><span>Рисуем блюз</span><b>06.08.2026</b></figcaption></figure>
+        <article class="bento-card quote-card span-5 reveal"><span class="kicker">Главный эффект</span><blockquote>«Я пришёл просто посмотреть - а ушёл с новыми людьми».</blockquote><p>Именно ради таких вечеров всё и затевалось.</p></article>
+        <article class="bento-card poster-stack span-7 reveal">
+          <img src="/assets/poster_rock.jpg" alt="Афиша Роковый вечер" loading="lazy" data-lightbox>
+          <img src="/assets/poster_art.jpg" alt="Афиша Рисуем блюз" loading="lazy" data-lightbox>
+          <img src="/assets/poster_ussr.png" alt="Афиша Побег в СССР" loading="lazy" data-lightbox>
+          <div><span>Каждая встреча</span><strong>Новый сюжет</strong></div>
+        </article>
       </div>
+    </section>
+
+    <section class="shell section-block" id="archive">
+      <header class="section-heading reveal">
+        <div><span class="kicker light">Архив</span><h2>Уже было. И было хорошо.</h2></div>
+        <p>Афиши прошедших вечеров остаются здесь как история клуба.</p>
+      </header>
+      <div class="bento-grid archive-grid" id="archiveGrid"></div>
+    </section>
+
+    <section class="shell contact-bento reveal" id="join">
       <div class="contact-copy">
-        <p>На сайте нет регистрации, анкет, телефонов и email. Нажми кнопку, отправь готовое сообщение — дальше общаемся лично.</p>
-        <div class="contact-actions">
-          <a class="button button-telegram" data-direct-telegram target="_blank" rel="noopener">Telegram</a>
-          <a class="button button-max" data-direct-max target="_blank" rel="noopener">MAX</a>
-        </div>
+        <span class="kicker">Связь с организатором</span>
+        <h2>Начнём с одного сообщения.</h2>
+        <p>Выбери событие и мессенджер. Без регистрации, анкеты и передачи контактов в неизвестную базу.</p>
+      </div>
+      <div class="contact-links">
+        <a data-direct-telegram target="_blank" rel="noopener"><span>Telegram</span><b>Написать Каве ↗</b></a>
+        <a data-direct-max target="_blank" rel="noopener"><span>MAX</span><b>Открыть диалог ↗</b></a>
+        <button data-next-event-join><span>Ближайшее событие</span><b>Принять участие ↗</b></button>
       </div>
     </section>
   </main>
 
-  <footer class="footer wrap">
-    <a class="footer-brand" href="#top">
-      <img src="/assets/logo.png" alt="Будем знакомы">
-      <div><strong>Будем знакомы</strong><span>взрослый клуб живого общения</span></div>
-    </a>
-    <p>Сергиев Посад · тематические вечера · живое общение</p>
-    <button class="footer-link" data-next-event-join>Принять участие →</button>
+  <footer class="footer shell">
+    <a class="brand footer-brand" href="#top"><img src="/assets/logo.png" alt=""><span><strong>Будем знакомы</strong><small>Сергиев Посад · 18+</small></span></a>
+    <p>Тематические вечера · живые люди · настоящие разговоры</p>
+    <nav><a href="#events">События</a><a href="#about">О нас</a><a href="#join">Контакты</a></nav>
   </footer>
 
-  <div class="mobile-join" aria-label="Быстрая запись на ближайшее мероприятие">
-    <div>
-      <span>27 августа</span>
-      <strong>Black &amp; Red · 20:20</strong>
-    </div>
-    <button class="button button-primary" data-next-event-join>Принять участие</button>
+  <div class="mobile-event-bar" id="mobileEventBar" aria-label="Ближайшее событие">
+    <div><span id="mobileEventDate">Ближайшая дата</span><strong id="mobileEventTitle">Будем знакомы</strong></div>
+    <button data-next-event-join>Участвовать <span aria-hidden="true">↗</span></button>
   </div>
 
   <div class="modal" id="joinModal" aria-hidden="true">
     <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
       <button class="modal-close" id="modalClose" aria-label="Закрыть">×</button>
-      <span class="eyebrow gold">Принять участие</span>
+      <span class="kicker">Принять участие</span>
       <h3 id="modalTitle">Будем знакомы</h3>
-      <p>Выбери мессенджер. В Telegram сообщение подставится автоматически, для MAX мы скопируем его перед переходом.</p>
+      <p id="modalIntro">Выбери удобный мессенджер. Сообщение уже подготовлено.</p>
       <div class="message-preview" id="messagePreview"></div>
-      <div class="modal-actions">
-        <a class="button button-telegram" id="telegramButton" href="#" target="_blank" rel="noopener">Telegram</a>
-        <a class="button button-max" id="maxButton" href="#" target="_blank" rel="noopener">MAX</a>
-      </div>
+      <div class="modal-actions"><a class="button button-primary" id="telegramButton" target="_blank" rel="noopener">Telegram ↗</a><a class="button button-dark" id="maxButton" target="_blank" rel="noopener">MAX ↗</a></div>
       <button class="copy-button" id="copyButton">Скопировать сообщение</button>
       <small id="copyStatus"></small>
     </div>
   </div>
 
-  <div class="image-lightbox" id="imageLightbox" aria-hidden="true">
-    <button class="image-lightbox-close" id="imageLightboxClose" aria-label="Закрыть изображение">×</button>
+  <div class="lightbox" id="imageLightbox" aria-hidden="true">
+    <button id="imageLightboxClose" aria-label="Закрыть изображение">×</button>
     <img id="imageLightboxImage" src="" alt="">
     <p id="imageLightboxCaption"></p>
   </div>

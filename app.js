@@ -3,37 +3,25 @@ const MAX_CONTACT_URL = 'https://max.ru/u/f9LHodD0cOID_dgF3S6fVV47t3D0pcOwjMiQ0I
 
 const upcomingEvents = [
   {
-    id: 'black-red',
-    title: 'Black & Red',
-    date: '27.08.2026',
-    isoDate: '2026-08-27',
-    time: '20:20',
-    poster: '/assets/poster_black_red.webp',
-    description: 'Тематический вечер в чёрно-красном настроении. Живое общение, программа клуба и атмосфера, где повод заговорить уже создан.',
-    venue: 'Гастробар на Ясной',
-    address: 'ул. Ясная, 6А',
-    price: '600 ₽ с картой клуба БЗ · 1000 ₽ без карты',
-    status: 'open'
-  },
-  {
     id: 'shufutinov-day',
-    title: 'Шуфутинов День',
+    title: 'День Шуфутина',
     date: '03.09.2026',
     isoDate: '2026-09-03',
-    time: '',
-    poster: '',
-    description: 'Третье сентября уже в календаре. Готовим новый тематический вечер - афиша, время и подробности появятся совсем скоро.',
+    time: '20:20',
+    poster: '/assets/poster_shufutin_day.webp',
+    description: 'Третье сентября становится поводом встретиться, послушать знакомые песни и познакомиться вживую. Приведи двух друзей - твой вход бесплатно.',
     venue: 'Гастробар на Ясной',
-    address: 'ул. Ясная, 6А',
-    price: 'Подробности скоро',
-    status: 'teaser'
+    address: 'пос. Ферма, ул. Ясная, 6А',
+    price: '600 ₽ с картой БЗ · 1000 ₽ без карты · с двумя друзьями бесплатно',
+    status: 'open'
   }
 ];
 
 const archiveEvents = [
   { title: 'Рисуем Блюз', date: '06.08.2026', time: '20:20', poster: '/assets/poster_art.jpg', label: 'Арт-вечер' },
   { title: 'Роковый вечер', date: '13.08.2026', time: '20:20', poster: '/assets/poster_rock.jpg', label: 'Музыкальный вечер' },
-  { title: 'Побег в СССР!', date: '20.08.2026', time: '20:20', poster: '/assets/poster_ussr.png', label: 'Квартирник для взрослых' }
+  { title: 'Побег в СССР!', date: '20.08.2026', time: '20:20', poster: '/assets/poster_ussr.png', label: 'Квартирник для взрослых' },
+  { title: 'Black & Red', date: '27.08.2026', time: '20:20', poster: '/assets/poster_black_red.webp', label: 'Тематический вечер' }
 ];
 
 const $ = (selector) => document.querySelector(selector);
@@ -78,7 +66,7 @@ function renderEvents() {
           <span>03</span><b>СЕН</b><div><small>Афиша готовится</small><strong>Третье сентября</strong></div>
         </div>`;
 
-    return `<article class="bento-card event-card ${event.status === 'teaser' ? 'event-teaser' : 'event-open'} span-${index === 0 ? '7' : '5'} reveal">
+    return `<article class="bento-card event-card ${event.status === 'teaser' ? 'event-teaser' : 'event-open'} span-${upcomingEvents.length === 1 ? '12' : (index === 0 ? '7' : '5')} reveal">
       ${poster}
       <div class="event-copy">
         <div class="event-status"><span>${event.status === 'teaser' ? 'Следующая дата' : 'Запись открыта'}</span><b>${esc(dateLabel(event))}</b></div>
